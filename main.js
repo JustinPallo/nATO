@@ -8,7 +8,7 @@ app.get("/", function(req, res){
 
     app.post("/user/add", function(req, res){
         /*some server side logic*/
-        res.send("OK");
+        res.send("Tudo bem");
     });
 
 /*serves all the static files */
