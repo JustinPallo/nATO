@@ -1,3 +1,4 @@
+//Fetches a .csv from google and starts processData()
 $(document).ready(function() {
     $.ajax({
         type: "GET",
@@ -7,6 +8,7 @@ $(document).ready(function() {
      });
 });
 
+//converts a CSV to an array[][] of broken up data
 function processData(allText) {
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
@@ -25,9 +27,8 @@ function processData(allText) {
     }
 
     apartments = buildApartments(lines);
-    for(i = 0; i < apartments.length; i++){
-        console.log(apartments[i].export());
-    }
+    
+    updateList(apartments);
 }
 
 //converts the broken up CSV array to an object
@@ -70,6 +71,14 @@ function buildApartments(aptData){
     return rtn;
 }
 
+//writes the array of Apartments to the page as new <li>s
+function updateList(apts){
+    for(i = 0; i < apts.length; i++){
+        $("#pensionSelect ul").append("<li>" + apts[i].title() + "</li>");
+    }
+}
+
+//because I like classes to be organized
 class Apartment{
     constructor(id, zona, nombre, dirrecion, estado, fechaDeInspecion, formaDePago, estadoDeProveedor, depositoEnGarantia, primerSemestre, segundoSemestre, tercerSemestre, cuartoSemestre, fechaInicio, fechaFinal, copiaDeContrato, cantidadDeMisioneros, tipoDeMisioneros, inmobiliaria, inmobDirrecion, inmobTelefono, inmobCorreo, duenoNombre, duenoCUIL, duenoTelefono, duenoInfo, duenoCorreo, medidorDeLuz){
         /*1*/this.id = id;
@@ -102,7 +111,7 @@ class Apartment{
         /*28*/this.lightBox = medidorDeLuz;
     }
 
-    export(){
-        return this.id + " " + this.zone + " " + this.name;
+    title(){
+        return this.zone + " " + this.name;
     }
 }
