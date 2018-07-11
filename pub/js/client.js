@@ -74,8 +74,28 @@ function buildApartments(aptData){
 //writes the array of Apartments to the page as new <li>s
 function updateList(apts){
     for(i = 0; i < apts.length; i++){
-        $("#pensionSelect ul").append("<li>" + apts[i].title() + "</li>");
+        $("#pensionSelect ul").append("<li id='" + apts[i].id + "'>" + apts[i].title() + "</li>");
     }
+
+    //sets up the enviroment so that when you click a button, stuff happens
+    $("#pensionSelect ul li").click(function(event){
+        var clickedID = $(event.target).text();
+        
+    });
+}
+
+//searches array of Apartments to return the index of the name
+function searchArrayForName(array, id){
+    for(i = 0; i < array.length; i++){
+        if(id == array[i]['name']){
+            return i;
+        }
+        else{
+            //wait for the next loop
+        }
+    }
+    //item not found
+    return -1;
 }
 
 //because I like classes to be organized
