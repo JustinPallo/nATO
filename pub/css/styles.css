@@ -10,7 +10,7 @@ body{
 #leftScroll{
     width: 25vw;
     float: left;
-    background-color: #c5cae9;
+    background-color: #009688;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body{
     font-style: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: #3f51b5;
+    background-color: #004d40;
     height: 10vh;
     margin: 0;
     padding: 0;
@@ -29,7 +29,13 @@ body{
 
 #logo h1{
     margin: 0;
-    color: #e8eaf6;
+    color: #e0f2f1;
+    padding: 1.2vw;
+    text-shadow: 1px 1px 0 #00bfa5,
+                 2px 2px 0 #00bfa5,
+                 3px 3px 0 #00bfa5,
+                 4px 4px 0 #00bfa5;
+
 }
 
 #pensionSelect ul{
@@ -45,14 +51,71 @@ body{
     list-style: none;
     border: thin solid black;
     height: 5vh;
-    color: #1a237e;
-    font-size: 1vw;
+    color: black;
+    font-size: 1.5vw;
+    overflow: hidden;
+    padding-top: .6vw;
+}
+
+#pensionSelect ul li:hover{
+    background-color: #4db6ac;
+    transition: background-color 250ms linear;
 }
 
 #viewPane{
     width: 75vw;
     float: right;
-    background-color: #ef9a9a;
+    background-color: #b2dfdb;
     height: 100vh;
     overflow: scroll;
+}
+
+h1, h2, h3{
+    margin: 0px;
+    padding: 0px;
+}
+
+.name{
+    font-size: 5vw;
+}
+
+.address, .id{
+    font-size: 2vw;
+}
+
+#viewPane div{
+    display: inline;
+}
+
+#aptTitle{
+
+}
+
+#generalInfo{
+    width: 100%;
+    background-color: #673ab7;
+}
+
+#payInfo{
+    width: 50%;
+    float: left;
+    background-color: #c8e6c9;
+}
+
+#contractInfo{
+    width: 50%;
+    float: right;
+    background-color: #fff9c4;
+}
+
+#inmobInfo{
+    width: 50%;
+    float: left;
+    background-color: #ffccbc;
+}
+
+#ownerInfo{
+    width: 50%;
+    float: right;
+    background-color: #f8bbd0;
 }

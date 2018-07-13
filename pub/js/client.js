@@ -107,9 +107,8 @@ class View{
     }
 
     update(apt){
-        $('h1.name').replaceWith("<h1 class='name'>" + apt.name + "</h1>");
-        $('h2.id').replaceWith("<h2 class'id'>" + apt.id + "</h2>");
-        $('h2.zone').replaceWith("<h2 class='zone'>" + apt.zone + "</h2>");
+        $('h1.name').replaceWith("<h1 class='name'>" + apt.zone + " " + apt.name + "</h1>");
+        $('h2.id').replaceWith("<h2 class='id'>" + apt.id + "</h2>");
         $('h2.address').replaceWith("<h2 class='address'>" + apt.address + "</h2>");
         $('h3.state').replaceWith("<h3 class='state'>Estado: " + apt.state + "</h3>");
         $('h3.inspectionDate').replaceWith("<h3 class='inspectionDate'>Fecha de Inspeción: " + apt.inspectionDate + "</h3>");
