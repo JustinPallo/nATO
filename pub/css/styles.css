@@ -54,4 +54,5 @@ body{
     float: right;
     background-color: #ef9a9a;
     height: 100vh;
+    overflow: scroll;
 }
